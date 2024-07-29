@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/logo/galaxy.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Space Parallex</title>
+  </head>
+  <body>
+    <header id="myDIV">
+      <a href="#" class="logo">Space</a>
+      <ul>
+        <li><a href="#" class="btnx active">Home</a></li>
+        <li><a href="#" class="btnx">Work</a></li>
+        <li><a href="#" class="btnx">About</a></li>
+        <li><a href="#" class="btnx">Contact</a></li>
+      </ul>
+    </header>
+    <section>
+      <img src="./assets/stars.png" alt="Stars" id="stars" />
+      <img src="./assets/moon.png" alt="Moon" id="moon" />
+      <img
+        src="./assets/mountains_behind.png"
+        alt="mountains_behind"
+        id="mountains_behind"
+      />
+      <h2 id="text">Moon Light</h2>
+      <a href="#sec" id="btn">Explore</a>
+      <img
+        src="./assets/mountains_front.png"
+        alt="mountains_front"
+        id="mountains_front"
+      />
+    </section>
+    <div class="sec" id="sec">
+      <h2>Space Epidome Parallex Scrolling Effect</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+        ipsa, voluptates vel, eligendi obcaecati architecto animi laborum
+        laboriosam molestiae delectus, quo accusantium explicabo sunt voluptate
+        nam unde aut quas ipsam pariatur facere perspiciatis? Distinctio maxime
+        molestiae veritatis labore? Similique quam, dolor porro cumque ipsum
+        impedit sequi nostrum aspernatur totam odio quasi iste debitis optio?
+        Repudiandae magnam, ipsa sequi esse nobis facilis temporibus modi
+        blanditiis eveniet at, aliquid dolore fuga repellendus. Ab sunt
+        voluptatum culpa quam quaerat modi, nulla odio delectus quibusdam. Nihil
+        enim saepe distinctio, excepturi atque incidunt tenetur ex maiores!
+        Eligendi neque labore quidem delectus nulla optio praesentium
+        ratione?<br /><br />Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Aperiam eos nulla eveniet non rerum, molestiae architecto quisquam
+        doloremque veniam sequi facilis reiciendis, voluptate fugit praesentium,
+        asperiores laboriosam a eaque aspernatur minima ab perspiciatis ex ipsam
+        fuga ea. Alias nulla quo excepturi quis, dicta molestiae dolor amet
+        harum earum quasi cumque.<br /><br />Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Ipsa corporis corrupti iusto eos deserunt,
+        at velit in optio accusantium quo dicta illo incidunt maiores dolorem
+        laudantium cumque natus ea. Neque similique pariatur distinctio soluta
+        qui cum incidunt reiciendis, doloribus, ea asperiores, laudantium
+        commodi obcaecati eum fuga ipsa aut delectus tempora architecto
+        quisquam? Accusantium repellendus sapiente harum at blanditiis, quos
+        corporis animi possimus aut ipsum nam? Vitae perferendis alias
+        cupiditate dicta ipsum illum veniam unde, fugit officia saepe veritatis,
+        reiciendis adipisci voluptatum libero in neque nihil commodi quis
+        temporibus quos. Unde voluptates blanditiis commodi impedit rem saepe,
+        explicabo quisquam debitis consectetur perferendis, laboriosam ut nobis
+        tenetur expedita at soluta voluptas temporibus?<br /><br />Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Aperiam voluptas,
+        aspernatur ipsam fugit cum quisquam dolorem nesciunt, eum a ipsa autem
+        in laboriosam illo. Reiciendis sunt officiis vitae sed tempore
+        repellendus mollitia inventore cumque, illo cum culpa aut labore
+        asperiores aliquam nihil, quod enim porro quaerat fugit saepe, fuga
+        delectus unde doloremque. Porro, exercitationem molestias ipsa facilis
+        praesentium iste. Fuga modi molestias tempore hic quo quas alias
+        sapiente nihil, explicabo iste nostrum obcaecati rem exercitationem
+        vitae sed repudiandae reiciendis libero esse maxime consectetur expedita
+        optio nesciunt assumenda laborum. Ad, error. At perspiciatis suscipit
+        sunt iure atque ut dignissimos, pariatur dolorum dolore commodi sequi
+        nulla sapiente fugiat. Culpa beatae ab, molestias doloribus recusandae
+        harum quisquam sint dignissimos tempore ullam fugit asperiores?
+      </p>
+    </div>
+
+    <script>
+      var btnContainer = document.getElementById("myDIV");
+  
+
+      var btns = btnContainer.getElementsByClassName("btnx");
+
+      // Loop through the buttons and add the active class to the current/clicked button
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+
+      let stars = document.getElementById("stars");
+      let moon = document.getElementById("moon");
+      let mountains_behind = document.getElementById("mountains_behind");
+      let text = document.getElementById("text");
+      let btn = document.getElementById("btn");
+      let mountains_front = document.getElementById("mountains_front");
+      let header = document.querySelector("header");
+
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        stars.style.left = value * 0.5 + "px";
+        moon.style.top = value * 1.25 + "px";
+        mountains_behind.style.top = value * 0.5 + "px";
+        mountains_front.style.top = value * 0 + "px";
+        text.style.marginRight = value * 4 + "px";
+        text.style.marginTop = value * 1.5 + "px";
+        btn.style.marginTop = value * 1.5 + "px";
+        header.style.top = value * 0.5 + "px";
+      });
+    </script>
+  </body>
+</html>
